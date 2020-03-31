@@ -1,0 +1,82 @@
+package com.testyantra.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.testyantra.infobean.MusicFilesInfoBean;
+
+public class MusicFilesDAOImpl implements MusicFilesDAO {
+
+	@Override
+	public MusicFilesInfoBean playAllSong() {
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		MusicFilesInfoBean musicFilesInfoBean = null;
+
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/elf_employee_info","root","root");
+			String query = "select * from musicfiles";
+			pstmt = con.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				musicFilesInfoBean = new MusicFilesInfoBean();
+				musicFilesInfoBean.setSong_ID(rs.getInt("Song_ID"));
+				musicFilesInfoBean.setSong_Title(rs.getString("Song_Title"));
+				musicFilesInfoBean.setArtist_Name(rs.getString("Artist_Name"));
+				musicFilesInfoBean.setAlbum_name(rs.getString("Album_name"));
+				musicFilesInfoBean.setSong_Location(rs.getString("Song_Location"));
+				musicFilesInfoBean.setDescription(rs.getString("Description"));
+			}
+		} 
+		catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+
+		finally {
+
+			if (rs!=null) {
+				try 
+				{
+					rs.close();
+				} 
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+
+			if (pstmt!=null) {
+				try 
+				{
+					pstmt.close();
+				} 
+				catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
+			}
+
+			if (con!=null) {
+				try {
+					con.close();
+				} 
+				catch (SQLException e) 
+				{
+					e.printStackTrace();
+				}
+			}
+
+		}
+
+
+
+		return musicFilesInfoBean;
+	}
+
+}

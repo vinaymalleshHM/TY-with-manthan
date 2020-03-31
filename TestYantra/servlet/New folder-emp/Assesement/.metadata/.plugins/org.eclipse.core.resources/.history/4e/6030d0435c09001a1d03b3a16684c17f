@@ -1,0 +1,13 @@
+package com.testyantra.dao;
+
+import com.testyantra.infobean.MusicFilesInfoBean;
+
+public class MusicFilesDAOImpl implements MusicFilesDAO {
+
+	@Override
+	public MusicFilesInfoBean playAllSong() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

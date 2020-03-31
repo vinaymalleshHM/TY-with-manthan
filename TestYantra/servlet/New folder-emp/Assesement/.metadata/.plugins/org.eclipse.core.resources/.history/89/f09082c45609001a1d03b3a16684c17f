@@ -1,0 +1,12 @@
+package com.testyantra.infobean;
+
+public class MusicFilesInfoBean {
+	
+	int song_ID;
+	String song_Title;
+	String artist_Name;
+	String album_name;
+	String song_Location;
+	String description;
+
+}

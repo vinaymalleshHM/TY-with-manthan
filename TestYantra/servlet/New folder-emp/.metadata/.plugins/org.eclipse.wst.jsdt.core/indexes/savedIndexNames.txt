@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+G:\Tyss\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+339150312.index
+2463397757.index
+721315476.index
+3304574151.index
+667984368.index
+1606600040.index

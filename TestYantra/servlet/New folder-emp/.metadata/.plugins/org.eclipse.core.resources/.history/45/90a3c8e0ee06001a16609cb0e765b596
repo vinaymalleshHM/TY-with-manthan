@@ -1,0 +1,14 @@
+
+public class Demo 
+{
+	int i;
+	static int j;
+	void eat()
+	{
+		System.out.println("eating");
+	}
+	static void run(j)
+	{
+			System.out.println("running");
+	}
+}

@@ -1,0 +1,9 @@
+package com.testyantra.dao;
+
+import com.testyantra.infobean.MusicFilesInfoBean;
+
+public interface MusicFilesDAO {
+	
+	MusicFilesInfoBean playAllSong();
+
+}

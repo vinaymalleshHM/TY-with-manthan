@@ -1,0 +1,12 @@
+package com.testyantra.music;
+
+import java.util.Scanner;
+
+public class MusicApp {
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Press 1 to Play a Song\n Press 2 to Search a Song\n Press 3 to Show All Song\n Press 4 to Operate on songs Databases\n ");
+	}
+
+}

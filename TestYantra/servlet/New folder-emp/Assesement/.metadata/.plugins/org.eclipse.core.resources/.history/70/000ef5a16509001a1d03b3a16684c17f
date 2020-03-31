@@ -1,0 +1,92 @@
+package com.testyantra.music;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
+import java.util.Scanner;
+
+import com.testyantra.dao.MusicFilesDAO;
+import com.testyantra.dao.MusicFilesDAOImpl;
+import com.testyantra.infobean.MusicFilesInfoBean;
+
+public class MusicApp {
+
+
+	public static void main(String[] args) {
+		MusicFilesDAO dao = new MusicFilesDAOImpl();
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Press 1 to Play a Song\n Press 2 to Search a Song\n Press 3 to Show All Song\n Press 4 to Operate on songs Databases\n ");
+		int input = sc.nextInt();
+		switch (input) {
+		case 1:Scanner sc1 = new Scanner(System.in);
+		System.out.println("Press A to Play All Song\n Press B to Play All Songs Randomly\n Press C to Play a Particilar Song");
+
+		String c = sc1.next();
+
+		if (c.equalsIgnoreCase("A")) {
+			ArrayList<String> al = dao.playAllSong();
+			for (String string : al) {
+				System.out.println(string);
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+
+			}
+
+		}
+
+		else if (c.equalsIgnoreCase("B")) {
+			
+			ArrayList<String> al = dao.playAllSong();
+			Collections.shuffle(al, new Random(3));
+			for (String string : al) {
+			try {
+				Thread.sleep(5000);
+				System.out.println(string);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+				
+			}
+			
+			
+		}
+
+		else if (c.equalsIgnoreCase("C")) {
+			Scanner sc2 = new Scanner(System.in);
+			System.out.println("Enter Song Name to be search ");
+			String song = sc2.next();
+			MusicFilesInfoBean musicFilesInfoBean = dao.searchSong("song");
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+		break;
+		case 2:
+
+			break;
+		case 3:
+			break;
+		case 4:
+
+			break;
+		default:
+			break;
+		}
+
+
+	}
+
+}

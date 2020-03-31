@@ -1,0 +1,11 @@
+package com.testyantra.dao;
+
+import java.util.ArrayList;
+
+import com.testyantra.infobean.MusicFilesInfoBean;
+
+public interface MusicFilesDAO {
+	
+	ArrayList playAllSong();
+
+}

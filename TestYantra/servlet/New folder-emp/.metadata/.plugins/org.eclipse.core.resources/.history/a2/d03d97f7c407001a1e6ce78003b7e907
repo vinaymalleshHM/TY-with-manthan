@@ -1,0 +1,21 @@
+
+public class Dinga implements Bottle {
+   int i =10;
+	@Override
+	public void open() {
+		
+	}
+
+	@Override
+	public void close() {
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		System.out.println(i);
+		
+	}
+
+}

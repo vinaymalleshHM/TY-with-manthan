@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            margin-left: 25%;
+            margin-right: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="loginForm"  >
+        <table>
+            <tr>
+                <td>User Name</td>
+                <td>:</td>
+                 <td><input type="text" name="user" id="" placeholder="Enter Valid User"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><p id = "pele" style="display: none;font-size: 8px;color: red;"> please enter user</p></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>:</td>
+                <td><input type="password" name="password" id="" placeholder="Enter Password"></td>
+            </tr>
+            <tr>
+                    <td></td>
+                    <td></td>
+                    <td><p id = "pwd" style="display: none;font-size: 8px;color: red;"> please enter password</p></td>
+                </tr>
+            <tr>
+                <td><button onclick="validateForm()" type = "button" name = "login">Login</button></td>
+            </tr>
+        </table>
+    </form>
+    <script src="/Form/Form.js"></script>
+</body>
+
+</html>

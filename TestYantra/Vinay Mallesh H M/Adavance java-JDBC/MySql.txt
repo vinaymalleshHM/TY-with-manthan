@@ -1,0 +1,35 @@
+create database elf_employee_info;
+
+use elf_employee_info;
+
+create table employee_info(
+     emp_id int primary key,
+     emp_name varchar(20)not null,
+     age int,
+     salary double,
+     designation varchar(20),
+     moblie bigint);
+
+insert into employee_info values(10,"Venki",23,60000,"team leared",8174553738);
+insert into employee_info values(20,"vinay",23,60000,"admin",8527419630);
+insert into employee_info values(30,"adam",13,5000.230,"manager",987546630);
+insert into employee_info values(40,"mark",53,8000.230,"manager",214526630);
+insert into employee_info values(50,"John",35,2351.32,"SD",8547546630);
+
+
+update employee_info set age=22 where emp_id=20;
+update employee_info set salary=5903.2 where emp_id=20;
+update employee_info set designation="admin" where emp_id=10;
+update employee_info set emp_name="blake" where emp_name="vinay";
+
+
+select emp_id, emp_name
+from employee_info 
+where salary > 5000;
+
+select emp_id, emp_name
+from employee_info 
+where designation="admin";
+ 
+delete from employee_info 
+where emp_id=10;

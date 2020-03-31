@@ -1,0 +1,493 @@
+SQL> ed;
+SP2-0107: Nothing to save.
+SQL> set pages 200 lines 200;
+SQL> ED;
+SP2-0107: Nothing to save.
+SQL> SELECT * FROM EMP;
+
+     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO                                                                                                                   
+---------- ---------- --------- ---------- --------- ---------- ---------- ----------                                                                                                                   
+      7369 SMITH      CLERK           7902 17-DEC-80        800                    20                                                                                                                   
+      7499 ALLEN      SALESMAN        7698 20-FEB-81       1600        300         30                                                                                                                   
+      7521 WARD       SALESMAN        7698 22-FEB-81       1250        500         30                                                                                                                   
+      7566 JONES      MANAGER         7839 02-APR-81       2975                    20                                                                                                                   
+      7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30                                                                                                                   
+      7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30                                                                                                                   
+      7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10                                                                                                                   
+      7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20                                                                                                                   
+      7839 KING       PRESIDENT            17-NOV-81       5000                    10                                                                                                                   
+      7844 TURNER     SALESMAN        7698 08-SEP-81       1500          0         30                                                                                                                   
+      7876 ADAMS      CLERK           7788 23-MAY-87       1100                    20                                                                                                                   
+      7900 JAMES      CLERK           7698 03-DEC-81        950                    30                                                                                                                   
+      7902 FORD       ANALYST         7566 03-DEC-81       3000                    20                                                                                                                   
+      7934 MILLER     CLERK           7782 23-JAN-82       1300                    10                                                                                                                   
+
+14 rows selected.
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT INSTR('BANGALORE','AB',1)
+  2* FROM DUAL
+SQL> /
+
+INSTR('BANGALORE','AB',1)                                                                                                                                                                               
+-------------------------                                                                                                                                                                               
+                        0                                                                                                                                                                               
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT INSTR('BANGALORE','ALO',1)
+  2* FROM DUAL
+SQL> /
+
+INSTR('BANGALORE','ALO',1)                                                                                                                                                                              
+--------------------------                                                                                                                                                                              
+                         5                                                                                                                                                                              
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT INSTR('BANGALORE','ALO',1,2)
+  2* FROM DUAL
+SQL> /
+
+INSTR('BANGALORE','ALO',1,2)                                                                                                                                                                            
+----------------------------                                                                                                                                                                            
+                           0                                                                                                                                                                            
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT INSTR('BANGALORE','ALO',1,1)
+  2* FROM DUAL
+SQL> /
+
+INSTR('BANGALORE','ALO',1,1)                                                                                                                                                                            
+----------------------------                                                                                                                                                                            
+                           5                                                                                                                                                                            
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT INSTR('BANANA','NA',1)
+  2* FROM DUAL
+SQL> /
+
+INSTR('BANANA','NA',1)                                                                                                                                                                                  
+----------------------                                                                                                                                                                                  
+                     3                                                                                                                                                                                  
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT INSTR('BANANA','NA',1,2)
+  2* FROM DUAL
+SQL> /
+
+INSTR('BANANA','NA',1,2)                                                                                                                                                                                
+------------------------                                                                                                                                                                                
+                       5                                                                                                                                                                                
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT REPLACE('BANGALORE','B','M')
+  2* FROM DUAL
+SQL> /
+
+REPLACE('                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+MANGALORE                                                                                                                                                                                               
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT REPLACE('BANGALORE','B',' ')
+  2* FROM DUAL
+SQL> /
+
+REPLACE('                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+ ANGALORE                                                                                                                                                                                               
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT CONCAT(ENAME,SAL)
+  2* FROM EMP
+SQL> /
+
+CONCAT(ENAME,SAL)                                                                                                                                                                                       
+--------------------------------------------------                                                                                                                                                      
+SMITH800                                                                                                                                                                                                
+ALLEN1600                                                                                                                                                                                               
+WARD1250                                                                                                                                                                                                
+JONES2975                                                                                                                                                                                               
+MARTIN1250                                                                                                                                                                                              
+BLAKE2850                                                                                                                                                                                               
+CLARK2450                                                                                                                                                                                               
+SCOTT3000                                                                                                                                                                                               
+KING5000                                                                                                                                                                                                
+TURNER1500                                                                                                                                                                                              
+ADAMS1100                                                                                                                                                                                               
+JAMES950                                                                                                                                                                                                
+FORD3000                                                                                                                                                                                                
+MILLER1300                                                                                                                                                                                              
+
+14 rows selected.
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT CONCAT(ENAME,CONCAT(' YOUR SALARY IS ',SAL))
+  2* FROM EMP
+SQL> /
+
+CONCAT(ENAME,CONCAT('YOURSALARYIS',SAL))                                                                                                                                                                
+------------------------------------------------------------------                                                                                                                                      
+SMITH YOUR SALARY IS 800                                                                                                                                                                                
+ALLEN YOUR SALARY IS 1600                                                                                                                                                                               
+WARD YOUR SALARY IS 1250                                                                                                                                                                                
+JONES YOUR SALARY IS 2975                                                                                                                                                                               
+MARTIN YOUR SALARY IS 1250                                                                                                                                                                              
+BLAKE YOUR SALARY IS 2850                                                                                                                                                                               
+CLARK YOUR SALARY IS 2450                                                                                                                                                                               
+SCOTT YOUR SALARY IS 3000                                                                                                                                                                               
+KING YOUR SALARY IS 5000                                                                                                                                                                                
+TURNER YOUR SALARY IS 1500                                                                                                                                                                              
+ADAMS YOUR SALARY IS 1100                                                                                                                                                                               
+JAMES YOUR SALARY IS 950                                                                                                                                                                                
+FORD YOUR SALARY IS 3000                                                                                                                                                                                
+MILLER YOUR SALARY IS 1300                                                                                                                                                                              
+
+14 rows selected.
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT TRIM (LEADING 'T' FROM 'TTTTTTTTTTTTSQLTTTTTTTTTTTTTTTT')
+  2* FROM DUAL
+SQL> R
+  1  SELECT TRIM (LEADING 'T' FROM 'TTTTTTTTTTTTSQLTTTTTTTTTTTTTTTT')
+  2* FROM DUAL
+
+TRIM(LEADING'T'FROM                                                                                                                                                                                     
+-------------------                                                                                                                                                                                     
+SQLTTTTTTTTTTTTTTTT                                                                                                                                                                                     
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT TRIM (TRAILING 'T' FROM 'TTTTTTTTTTTTSQLTTTTTTTTTTTTTTTT')
+  2* FROM DUAL
+SQL> /
+
+TRIM(TRAILING'T                                                                                                                                                                                         
+---------------                                                                                                                                                                                         
+TTTTTTTTTTTTSQL                                                                                                                                                                                         
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT TRIM (TRAILING 'TL' FROM 'TTTTTTTTTTTTSQLTTTTTTTTTTTTTTTT')
+  2* FROM DUAL
+SQL> /
+SELECT TRIM (TRAILING 'TL' FROM 'TTTTTTTTTTTTSQLTTTTTTTTTTTTTTTT')
+       *
+ERROR at line 1:
+ORA-30001: trim set should have only one character 
+
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT TRIM (BOTH 'TL' FROM 'TTTTTTTTTTTTSQLTTTTTTTTTTTTTTTT')
+  2* FROM DUAL
+SQL> /
+SELECT TRIM (BOTH 'TL' FROM 'TTTTTTTTTTTTSQLTTTTTTTTTTTTTTTT')
+       *
+ERROR at line 1:
+ORA-30001: trim set should have only one character 
+
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT TRIM (BOTH 'T' FROM 'TTTTTTTTTTTTSQLTTTTTTTTTTTTTTTT')
+  2* FROM DUAL
+SQL> /
+
+TRI                                                                                                                                                                                                     
+---                                                                                                                                                                                                     
+SQL                                                                                                                                                                                                     
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT SYSDATE
+  2* FROM DUAL
+SQL> /
+
+SYSDATE                                                                                                                                                                                                 
+---------                                                                                                                                                                                               
+14-NOV-19                                                                                                                                                                                               
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT SYSTEMDATE
+  2* FROM DUAL
+SQL> /
+SELECT SYSTEMDATE
+       *
+ERROR at line 1:
+ORA-00904: "SYSTEMDATE": invalid identifier 
+
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT SYSTEM DATE
+  2* FROM DUAL
+SQL> /
+SELECT SYSTEM DATE
+              *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT SYSTIMESTAMP
+  2* FROM DUAL
+SQL> /
+
+SYSTIMESTAMP                                                                                                                                                                                            
+---------------------------------------------------------------------------                                                                                                                             
+14-NOV-19 10.45.42.861000 AM +05:30                                                                                                                                                                     
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT ADD_MONTHS(SYSDATE,3)
+  2* FROM DUAL
+SQL> /
+
+ADD_MONTH                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+14-FEB-20                                                                                                                                                                                               
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT ADD_MONTHS('14-NOV-2019',3)
+  2* FROM DUAL
+SQL> /
+
+ADD_MONTH                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+14-FEB-20                                                                                                                                                                                               
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT ADD_MONTHS('14-NOV-19',3)
+  2* FROM DUAL
+SQL> /
+
+ADD_MONTH                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+14-FEB-20                                                                                                                                                                                               
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT ADD_MONTHS('14-NOV-19',-5)
+  2* FROM DUAL
+SQL> /
+
+ADD_MONTH                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+14-JUN-19                                                                                                                                                                                               
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT MONTHS_BETWEEN('14-NOV-2019','14-NOV-2020')
+  2* FROM DUAL
+SQL> /
+
+MONTHS_BETWEEN('14-NOV-2019','14-NOV-2020')                                                                                                                                                             
+-------------------------------------------                                                                                                                                                             
+                                        -12                                                                                                                                                             
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT MONTHS_BETWEEN('14-NOV-2020','14-NOV-2019')
+  2* FROM DUAL
+SQL> /
+
+MONTHS_BETWEEN('14-NOV-2020','14-NOV-2019')                                                                                                                                                             
+-------------------------------------------                                                                                                                                                             
+                                         12                                                                                                                                                             
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT LAST_DAY(SYSDATE)
+  2* FROM DUAL
+SQL> /
+
+LAST_DAY(                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+30-NOV-19                                                                                                                                                                                               
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT LAST_DAY('14-NOV-2019')
+  2* FROM DUAL
+SQL> /
+
+LAST_DAY(                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+30-NOV-19                                                                                                                                                                                               
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT LAST_DAY('1-FEB-2019')
+  2* FROM DUAL
+SQL> /
+
+LAST_DAY(                                                                                                                                                                                               
+---------                                                                                                                                                                                               
+28-FEB-19                                                                                                                                                                                               
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT EXTRACT(MONTH FROM TO_DATE '1-FEB-2019')
+  2* FROM DUAL
+SQL> /
+SELECT EXTRACT(MONTH FROM TO_DATE '1-FEB-2019')
+                                  *
+ERROR at line 1:
+ORA-00907: missing right parenthesis 
+
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT EXTRACT(MONTH FROM TO_DATE( '1-FEB-2019'))
+  2* FROM DUAL
+SQL> /
+
+EXTRACT(MONTHFROMTO_DATE('1-FEB-2019'))                                                                                                                                                                 
+---------------------------------------                                                                                                                                                                 
+                                      2                                                                                                                                                                 
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT EXTRACT(YEAR FROM TO_DATE( '1-FEB-2019'))
+  2* FROM DUAL
+SQL> /
+
+EXTRACT(YEARFROMTO_DATE('1-FEB-2019'))                                                                                                                                                                  
+--------------------------------------                                                                                                                                                                  
+                                  2019                                                                                                                                                                  
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT EXTRACT(DAY FROM TO_DATE( '1-FEB-2019'))
+  2* FROM DUAL
+SQL> /
+
+EXTRACT(DAYFROMTO_DATE('1-FEB-2019'))                                                                                                                                                                   
+-------------------------------------                                                                                                                                                                   
+                                    1                                                                                                                                                                   
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT MOD(6,2)
+  2* FROM DUAL
+SQL> /
+
+  MOD(6,2)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+         0                                                                                                                                                                                              
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT MOD(15,2)
+  2* FROM DUAL
+SQL> /
+
+ MOD(15,2)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+         1                                                                                                                                                                                              
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT MOD(464645231464867,35565323)
+  2* FROM DUAL
+SQL> /
+
+MOD(464645231464867,35565323)                                                                                                                                                                           
+-----------------------------                                                                                                                                                                           
+                      6342633                                                                                                                                                                           
+
+SQL> ED
+Wrote file afiedt.buf
+
+  1  SELECT POWER(5,2)
+  2* FROM DUAL
+SQL> /
+
+POWER(5,2)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+        25                                                                                                                                                                                              
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT POWER(55,5)
+  2* FROM DUAL
+SQL> /
+
+POWER(55,5)                                                                                                                                                                                             
+-----------                                                                                                                                                                                             
+  503284375                                                                                                                                                                                             
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT SQRT(121)
+  2* FROM DUAL
+SQL> /
+
+ SQRT(121)                                                                                                                                                                                              
+----------                                                                                                                                                                                              
+        11                                                                                                                                                                                              
+
+SQL> ED;
+Wrote file afiedt.buf
+
+  1  SELECT SQRT(121121)
+  2* FROM DUAL
+SQL> /
+
+SQRT(121121)                                                                                                                                                                                            
+------------                                                                                                                                                                                            
+  348.024424                                                                                                                                                                                            
+
+SQL> SPOOL OFF
